@@ -150,7 +150,7 @@ const startServer = async (from) => {
         })
         //WHEN BOT IS ADDED TO A GROUP
         client.onAddedToGroup(async (chat) => {
-            if(isWhite(chat.id)) return client.sendText(chat.id, 'Halo semuanya, saya adalah xYz BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
+            if(isWhite(chat.id)) return client.sendText(chat.id, 'Halo semuanya, saya adalah Riintan BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
             if(mtcState === false){
                 const groups = await client.getAllGroups()
                 // BOT group count less than
@@ -166,7 +166,7 @@ const startServer = async (from) => {
                             client.leaveGroup(chat.id)
                         })
                     }else{
-                        if(!chat.isReadOnly) client.sendText(chat.id, 'Halo semuanya, saya adalah xYz BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
+                        if(!chat.isReadOnly) client.sendText(chat.id, 'Halo semuanya, saya adalah Riintan BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
                     }
                 }
             }else{
@@ -192,7 +192,7 @@ const startServer = async (from) => {
                 const groupMembers = isGroupMsg ? await client.getGroupMembersId(groupId) : ''
                 const isGroupAdmins = isGroupMsg ? groupAdmins.includes(serial) : false
                 const isBanned = banned.includes(serial)
-                const isBotGroupAdmins = isGroupMsg ? groupAdmins.includes(botNumber + '@c.us') : false
+                const isBotGroupAdmins = isGroupMsg ? groupAdmins.includes(botNumber + '6287802872035@c.us') : false
                 const commands = commandArray
                 const cmds = commands.map(x => x + '\\b').join('|')
                 const cmd = type === 'chat' ? body.match(new RegExp(cmds, 'g')) : type === 'image' && caption ? caption : ''
@@ -431,7 +431,7 @@ const startServer = async (from) => {
                             if(isSadmin){
                                 await client.joinGroupViaLink(args[1]).then(async () => {
                                     await client.sendText(from, 'Berhasil join ke group via link!')
-                                    await client.sendText(log.id, 'Halo semuanya, saya adalah xYz BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
+                                    await client.sendText(log.id, 'Halo semuanya, saya adalah Riintan BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
                                 })
                             }else{
                                 let group = await client.getAllGroups()
@@ -444,7 +444,7 @@ const startServer = async (from) => {
                                     }else{
                                         await client.joinGroupViaLink(args[1]).then(async () => {
                                             await client.sendText(from, 'Berhasil join ke group via link!')
-                                            await client.sendText(log.id, 'Halo semuanya, saya adalah xYz BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
+                                            await client.sendText(log.id, 'Halo semuanya, saya adalah Riintan BOT. gunakan '+prefix+'help untuk menggunakan saya :D')
                                             limitAdd(serial)
                                         })
                                     }
@@ -558,7 +558,7 @@ const startServer = async (from) => {
                         if(isLimit(serial)) return
                         if(!args.lenght >= 2) return
                         let qrcodes = body.slice(8)
-                        await client.sendFileFromUrl(from, `https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${qrcodes}`, 'gambar.png', '_*Processing Sukses #XyZ BOT*_').catch(err => console.log('[ERROR] send image'))
+                        await client.sendFileFromUrl(from, `https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${qrcodes}`, 'gambar.png', '_*Processing Sukses #Riintan BOT*_').catch(err => console.log('[ERROR] send image'))
                         limitAdd(serial)
                         break
                     case prefix+'igstalk':
@@ -618,7 +618,7 @@ const startServer = async (from) => {
 -------------------------------------------------------------------
 ${biography}
 -------------------------------------------------------------------
-_*Processing Sukses #XyZ BOT*_`
+_*Processing Sukses #Riintan BOT*_`
                             client.sendText(from, hasil);
                             limitAdd(serial);
                             browser.close();
@@ -669,7 +669,7 @@ _*Processing Sukses #XyZ BOT*_`
                             limitAdd(serial)
                         })
                         break
-                    case '@6289654471026':
+                    case '@6287802872035':
                         await client.sendTextWithMentions(chatId, `Hai @${serial.match(/\d+/g)}, ada yang bisa saya bantu? ${prefix}help untuk melihat list perintah :D`)
                         break
                     case prefix+'lang':
@@ -721,7 +721,7 @@ _*Processing Sukses #XyZ BOT*_`
                                     Object.keys(track).reverse().forEach(function (i) {
                                         hasil += `\n├────────────────\n├> Tanggal   : ${track[i].date}\n├> Deskripsi : ${track[i].desc}\n├> Status    : ${track[i].status}\n├────────────────`;
                                     });
-                                    hasil += '\n╰──[ xYz WhatsApp Bot ]───';
+                                    hasil += '\n╰──[ Riintan WhatsApp Bot ]───';
                                     client.sendText(from,hasil);
                                     limitAdd(serial);
                                 } else {
@@ -741,7 +741,7 @@ _*Processing Sukses #XyZ BOT*_`
                             const sr = /{(.*?)}/gi;
                             const hs = res.data.acak.id.ayat;
                             const ket = `${hs}`.replace(sr, '');
-                            let hasil = `*[ ${ket} ]*   ${res.data.acak.ar.teks}\n\n${res.data.acak.id.teks}(QS.${res.data.surat.nama}, Ayat ${ket})\n\n_*Processing Sukses #XyZ BOT*_`;
+                            let hasil = `*[ ${ket} ]*   ${res.data.acak.ar.teks}\n\n${res.data.acak.id.teks}(QS.${res.data.surat.nama}, Ayat ${ket})\n\n_*Processing Sukses #Riintan BOT*_`;
                             client.sendText(from, hasil);
                         })
                         break
@@ -774,7 +774,7 @@ _*Processing Sukses #XyZ BOT*_`
 ~> Lokasi 5 : ${result.Wilayah5}
 ~> Potensi : ${result.Potensi}
 
-_*Processing Sukses #XyZ BOT*_`
+_*Processing Sukses #Riintan BOT*_`
                                 client.sendText(from, hasils)
                                 limitAdd(serial)
                         });})
@@ -796,7 +796,7 @@ _*Processing Sukses #XyZ BOT*_`
                         if(googleQuery == undefined || googleQuery == ' ') return
                         google({ 'query': googleQuery, 'limit': '2' }).then(results => {
                             let vars = results[0];
-                            client.sendText(from, `_*Hasil Pencarian Google*_\n\n~> Judul : \n${vars.title}\n\n~> Deskripsi : \n${vars.snippet}\n\n~> Link : \n${vars.link}\n\n_*Processing Sukses #XyZ BOT*_`);
+                            client.sendText(from, `_*Hasil Pencarian Google*_\n\n~> Judul : \n${vars.title}\n\n~> Deskripsi : \n${vars.snippet}\n\n~> Link : \n${vars.link}\n\n_*Processing Sukses #Rinntan BOT*_`);
                         }).catch(e => {
                             client.sendText(e);
                         })
@@ -924,7 +924,7 @@ _*Processing Sukses #XyZ BOT*_`
                         await tiktok(url)
                         .then((videoMeta) => {
                             const filename = videoMeta.authorMeta.name + '.mp4'
-                            const caps = `\nUsername: ${videoMeta.authorMeta.name} \nMusic: ${videoMeta.musicMeta.musicName} \nView: ${videoMeta.playCount.toLocaleString()} \nLike: ${videoMeta.diggCount.toLocaleString()} \nComment: ${videoMeta.commentCount.toLocaleString()} \nShare: ${videoMeta.shareCount.toLocaleString()} \nCaption: ${videoMeta.text.trim() ? videoMeta.text : '-'} \n\n_*Processing Sukses #XyZ BOT*_!`
+                            const caps = `\nUsername: ${videoMeta.authorMeta.name} \nMusic: ${videoMeta.musicMeta.musicName} \nView: ${videoMeta.playCount.toLocaleString()} \nLike: ${videoMeta.diggCount.toLocaleString()} \nComment: ${videoMeta.commentCount.toLocaleString()} \nShare: ${videoMeta.shareCount.toLocaleString()} \nCaption: ${videoMeta.text.trim() ? videoMeta.text : '-'} \n\n_*Processing Sukses #Riintan BOT*_!`
                             limitAdd(serial)
                             client.sendFile(from,videoMeta.urlbase64, filename, videoMeta.NoWaterMark ? caps : `⚠ Video tanpa watermark tidak tersedia. \n\n${caps}`)
                             .catch(err => console.log('Caught exception: ', err))
@@ -937,7 +937,7 @@ _*Processing Sukses #XyZ BOT*_`
                         client.sendText(from, license)
                         break
                     case prefix+'creator':
-                        client.sendContact(chatId, `6281297980063@c.us`)
+                        client.sendContact(chatId, `6285349607186@c.us`)
                         break
                     case prefix+'ig':
                     case prefix+'instagram':
@@ -960,7 +960,7 @@ _*Processing Sukses #XyZ BOT*_`
                                         shorts.push(links[i])
                                     }
                                     const link = shorts.map((x) => `${x.resolution} Quality: ${x.short}`)
-                                    const caption = `Text: ${title} \n\nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #XyZ BOT*_!`
+                                    const caption = `Text: ${title} \n\nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses Riintan BOT*_!`
                                     client.sendFileFromUrl(from,thumbnail, 'videos.jpg', caption ).catch(err => console.log('[ERROR] send image'))
                                     limitAdd(serial)
                                 } catch (err) {
@@ -992,7 +992,7 @@ _*Processing Sukses #XyZ BOT*_`
                                         shorts.push(links[i])
                                     }
                                     const link = shorts.map((x) => `${x.resolution} Quality: ${x.short}`)
-                                    const caption = `Text: ${title} \n\nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #XyZ BOT*_!`
+                                    const caption = `Text: ${title} \n\nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #Riintan BOT*_!`
                                     client.sendFileFromUrl(from,thumbnail, 'videos.jpg', caption ).catch(err => console.log('[ERROR] send image'))
                                     limitAdd(serial)
                                 } catch (err) {
@@ -1025,7 +1025,7 @@ _*Processing Sukses #XyZ BOT*_`
                                         shorts.push(links[i])
                                     }
                                     const link = shorts.map((x) => `${x.resolution} Quality: ${x.short}`)
-                                    const caption = `Text: ${title} \nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #XyZ BOT*_!`
+                                    const caption = `Text: ${title} \nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #Riintan BOT*_!`
                                     client.sendFileFromUrl(from,thumbnail, 'videos.jpg', caption ).catch(err => console.log('[ERROR] send image'))
                                     limitAdd(serial)
                                 } catch (err) {
@@ -1058,7 +1058,7 @@ _*Processing Sukses #XyZ BOT*_`
                                     shorts.push(links[i])
                                 }
                                 const link = shorts.map((x) => `${x.resolution} Quality: ${x.short}`)
-                                const caption = `Text: ${title} \nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #XyZ BOT*_!`
+                                const caption = `Text: ${title} \nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #Riintan BOT*_!`
                                 client.sendFileFromUrl(from,thumbnail, 'videos.jpg', caption ).catch(err => console.log('[ERROR] send image'))
                                 limitAdd(serial)
                             } catch (err) {
@@ -1091,7 +1091,7 @@ _*Processing Sukses #XyZ BOT*_`
                                     shorts.push(links[i])
                                 }
                                 const link = shorts.map((x) => `${x.resolution} Quality: ${x.short}`)
-                                const caption = `Tittle: ${title} \nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #XyZ BOT*_!`
+                                const caption = `Tittle: ${title} \nLink Download: \n${link.join('\n')} \n\n_*Processing Sukses #Riintan BOT*_!`
                                 client.sendFileFromUrl(from,thumbnail, 'videos.jpg', caption ).catch(err => console.log('[ERROR] send image'))
                                 limitAdd(serial)
                             } catch (err) {
@@ -1112,7 +1112,7 @@ _*Processing Sukses #XyZ BOT*_`
                             const shortener = await urlShortener(url)
                             url['short'] = shortener
                             short.push(url)
-                            const caption = `Link: ${shortener}\n\n_*Processing Sukses #XyZ BOT*_!`
+                            const caption = `Link: ${shortener}\n\n_*Processing Sukses #Riintan/ BOT*_!`
                             client.sendText(from, caption)
                             limitAdd(serial)
                         } else {
@@ -1207,7 +1207,7 @@ _*Tips kesehatan*_
 - Menjaga daya tahan tubuh
 - Menerapkan physical distancing
 
-_*#XyZ BOT Information*_`)
+_*#Riintan BOT Information*_`)
                                             limitAdd(serial)
                                         }
                                     })
@@ -1272,7 +1272,7 @@ _*#XyZ BOT Information*_`)
                             }) 
                             .write('./quote/quoteIt.jpeg', function (err) {
                                 if (err) throw err;
-                                client.sendFile(from, './quote/quoteIt.jpeg','quoteIt.jpeg', '_*Processing Sukses #XyZ BOT*_');
+                                client.sendFile(from, './quote/quoteIt.jpeg','quoteIt.jpeg', '_*Processing Sukses #Riintan BOT*_');
                                 limitAdd(serial);
                             });});}
                             await processImgs();
@@ -1293,7 +1293,7 @@ _*#XyZ BOT Information*_`)
                             let image = await Jimp.read(gambar);
                             image.quality(55).write('./quote/compressed.jpeg', function (err) {
                                 if (err) console.log(err);
-                                client.sendFile(from, './quote/compressed.jpeg','compressed.jpg', '_*Processing Sukses #XyZ BOT*_');
+                                client.sendFile(from, './quote/compressed.jpeg','compressed.jpg', '_*Processing Sukses #Riintan BOT*_');
                                 limitAdd(serial);
                             });
                         }
